@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Professional Network Graph Visualization</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="mynetwork"></div>
+    <div id="legend"></div>
+    <button id="toggleShortcutPane">Show Shortcuts</button>
+    <div id="shortcutPane" class="hidden">
+        <h2>Keyboard Shortcuts</h2>
+        <ul>
+            <li>[tab] creates a new child branch.</li>
+            <li>[shift] + [tab] moves back to the parent branch</li>
+            <li>[shift] + [enter] creates a new sibling branch</li>
+            <li>[ctrl] + [enter] creates a new line of text inside the existing branch</li>
+            <li>[ctrl] + [alt] + [shift] + arrow keys allow you to move around between items, along the direction of the branches. If no item is currently being edited, any combination will also select the root item.</li>
+            <li>[ctrl] + [Z] (or [command] + [Z] on Mac) undoes the last change (works for all changes since the page was reloaded)</li>
+            <li>[ctrl] + [shift] + [Z] redoes the last undone change.</li>
+            <li>[ctrl] + [+] (or [command] + [+] on Mac) increases the text size of the current item, or zooms the page if no item is active.</li>
+            <li>[ctrl] + [-] (or [command] + [-] on Mac) reduces the text size of the current item, or zooms the page if no item is active.</li>
+            <li>[ctrl] + [0] (or [command] + [0] on Mac) sets the text size of the current item back to the default, or sets the page zoom to default if no item is active.</li>
+            <li>Double-tap [backspace] in an empty item with no children to remove it.</li>
+            <li>Press [ctrl] + [shift] + [alt] + [r] to re-arrange all of the branches in a diagram.</li>
+            <li>[ctrl] + click on the (+) button of a branch to remove it. (On Mac, use [alt] instead of [ctrl])</li>
+            <li>[shift] + click on the (+) button of a branch to insert a new parent above it</li>
+            <li>[ctrl] + [shift] + click on the (+) button of a branch to remove it without removing its children. (Or also use [command] + click on Mac)</li>
+            <li>[shift] + drag an item to transplant it to a different parent</li>
+            <li>Hold [ctrl] after starting to drag an item to snap to a grid as you move it.</li>
+            <li>[ctrl] + [alt] + [c]: cycle colour</li>
+            <li>[ctrl] + [alt] + [s]: cycle shape</li>
+            <li>[ctrl] + [alt] + [t]: cycle line thickness</li>
+            <li>[ctrl] + [alt] + [l]: toggle line straight/curved (for paid subscriptions)</li>
+            <li>[ctrl] + [alt] + [d]: toggle line dashed/solid (for paid subscriptions)</li>
+            <li>Zoom: [ctrl] + mousewheel</li>
+            <li>Undo: [ctrl] + Z</li>
+            <li>Redo: [ctrl] + [shift] + Z</li>
+        </ul>
+    </div>
+    <button id="toggleSettingsPane">Settings</button>
+    <div id="settingsPane" class="hidden">
+        <h2>Settings</h2>
+        <div>
+            <input type="checkbox" id="zoomOnFocus" checked>
+            <label for="zoomOnFocus">Zoom on Focus</label>
+        </div>
+        <!-- Add more settings controls as needed -->
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.2/tinycolor.min.js"></script>
+    <script src="colorUtils.js"></script>
+    <script src="networkSettings.js"></script>
+    <script src="networkSetup.js"></script>
+    <script src="eventHandlers.js"></script>
+    <script src="shortcuts.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
