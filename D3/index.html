@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>D3.js Hierarchical Data Visualization</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Data Visualization</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sidebar and Content -->
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col s12 m4 l3">
+      <ul id="slide-out" class="sidenav sidenav-fixed">
+        <li>
+          <div class="user-view">
+            <div class="background">
+              <img src="https://via.placeholder.com/300">
+            </div>
+            <a href="#user"><img class="circle" src="https://via.placeholder.com/150"></a>
+            <a href="#name"><span class="white-text name">John Doe</span></a>
+            <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+          </div>
+        </li>
+        <li><a href="#home"><i class="material-icons">home</i>Home</a></li>
+        <li><a href="#visualization"><i class="material-icons">bubble_chart</i>Visualization</a></li>
+        <li><a href="#settings"><i class="material-icons">settings</i>Settings</a></li>
+      </ul>
+      <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="col s12 m8 l9">
+      <div id="home" class="section scrollspy">
+        <div class="card-panel">
+          <h5>Welcome to the Data Visualization Tool</h5>
+          <p>This tool allows you to visualize hierarchical data in various layouts. Use the settings to customize the view and explore the data interactively.</p>
+        </div>
+      </div>
+
+      <div id="visualization" class="section scrollspy">
+        <div class="card-panel">
+          <h5>Data Visualization</h5>
+          <div id="mynetwork"></div>
+        </div>
+      </div>
+
+      <div id="settings" class="section scrollspy">
+        <div class="card-panel">
+          <h5>Settings</h5>
+          <div class="input-field">
+            <select id="layoutSelector">
+              <option value="tree">Tree Layout</option>
+              <option value="radial">Radial Layout</option>
+              <option value="force">Force-Directed Layout</option>
+            </select>
+            <label for="layoutSelector">Select Layout</label>
+          </div>
+          <h3>Force Layout Settings</h3>
+          <label for="chargeStrength">Charge Strength:</label>
+          <input type="range" id="chargeStrength" name="chargeStrength" min="-1000" max="0" step="10" value="-300">
+          <span id="chargeValue">-300</span>
+
+          <label for="linkDistance">Link Distance:</label>
+          <input type="range" id="linkDistance" name="linkDistance" min="0" max="300" step="10" value="100">
+          <span id="linkValue">100</span>
+
+          <label for="collisionRadius">Collision Radius:</label>
+          <input type="range" id="collisionRadius" name="collisionRadius" min="0" max="100" step="5" value="10">
+          <span id="collisionValue">10</span>
+
+          <h5>Keyboard Shortcuts</h5>
+          <ul>
+            <!-- List of shortcuts here -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.2/tinycolor.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script type="module" src="scripts/colorUtils.js"></script>
+  <script type="module" src="scripts/networkSetup.js"></script>
+  <script type="module" src="scripts/eventHandlers.js"></script>
+  <script type="module" src="scripts/keyboardInput.js"></script>
+  <script type="module" src="scripts/dataLoader.js"></script>
+  <script type="module" src="scripts/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems);
+      var scrollspyElems = document.querySelectorAll('.scrollspy');
+      var scrollspyInstances = M.ScrollSpy.init(scrollspyElems, {scrollOffset: 50});
+      var selectElems = document.querySelectorAll('select');
+      var selectInstances = M.FormSelect.init(selectElems);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+{
+    "id": "6548c011afc77d64c7966a34",
+    "name": "Ecommerce B2B",
+    "children": [
+        {
+            "id": "75822058d7c9ddb3e70bb9a2",
+            "name": "Frontend View",
+            "children": [
+                {
+                    "id": "9530e5bcead5e3340e69404f",
+                    "name": "Search Bar for Products",
+                    "children": null
+                },
+                {
+                    "id": "ead0377c2171483bb787a548",
+                    "name": "Blog",
+                    "children": null
+                },
+                {
+                    "id": "47a83420eeff69cd5b133117",
+                    "name": "Contact Us",
+                    "children": null
+                },
+                {
+                    "id": "f0e95348b96e8d94d40c4aea",
+                    "name": "Products",
+                    "children": [
+                        {
+                            "id": "3e6cb7b3adeddfd4ade404a4",
+                            "name": "Add to cart",
+                            "children": null
+                        },
+                        {
+                            "id": "4bd999b6cd8da61b791cec73",
+                            "name": "Browse Products",
+                            "children": null
+                        },
+                        {
+                            "id": "d3aaa9d14f35b1ec2c57f706",
+                            "name": "Place order",
+                            "children": null
+                        },
+                        {
+                            "id": "db7c127ab5850504fde5a24e",
+                            "name": "Make Payment",
+                            "children": null
+                        },
+                        {
+                            "id": "d8abc787ab95e77b0cd7973c",
+                            "name": "Review and rating",
+                            "children": null
+                        }
+                    ]
+                },
+                {
+                    "id": "de0eef874af8036cbd7cb250",
+                    "name": "shopping cart",
+                    "children": null
+                },
+                {
+                    "id": "753a4ee9e530cae7c622e8b7",
+                    "name": "Login / SignUp (Private Profile)",
+                    "children": [
+                        {
+                            "id": "57a493681dc36930ac62d321",
+                            "name": "Backend View  depending on Account Type",
+                            "children": [
+                                {
+                                    "id": "3c8312a333c535090f1b9a96",
+                                    "name": "",
+                                    "children": null
+                                },
+                                {
+                                    "id": "88ee139c28ea269b220efb8d",
+                                    "name": "",
+                                    "children": null
+                                },
+                                {
+                                    "id": "6c68dc8bef18d81d51883624",
+                                    "name": "Admin Account",
+                                    "children": [
+                                        {
+                                            "id": "c6bfcef7632eea53398e9304",
+                                            "name": "Manage all Accounts",
+                                            "children": [
+                                                {
+                                                    "id": "0fbc6d34eb7cb09610ff2e79",
+                                                    "name": "Customer Account",
+                                                    "children": [
+                                                        {
+                                                            "id": "875e656a85b3a9ff6830d710",
+                                                            "name": "Orders",
+                                                            "children": [
+                                                                {
+                                                                    "id": "4575ba0401e32ed30a9d838b",
+                                                                    "name": "Order History",
+                                                                    "children": [
+                                                                        {
+                                                                            "id": "3142d9b8ba142cbb1cd91c90",
+                                                                            "name": "Rate",
+                                                                            "children": null
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "id": "59f195d3161375b806a1d122",
+                                                                    "name": "Get Help",
+                                                                    "children": null
+                                                                },
+                                                                {
+                                                                    "id": "996f5e385ae2133720a8f2c9",
+                                                                    "name": "Track order",
+                                                                    "children": null
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "id": "5733e04f4e10c60fa8a98770",
+                                                            "name": "Profile",
+                                                            "children": [
+                                                                {
+                                                                    "id": "e6a0c1960785379618fb8979",
+                                                                    "name": "Shipping Addresses",
+                                                                    "children": null
+                                                                },
+                                                                {
+                                                                    "id": "8b9840b5475207318b08409e",
+                                                                    "name": "Billing Address",
+                                                                    "children": null
+                                                                },
+                                                                {
+                                                                    "id": "3f3926961e47e668721f8cfd",
+                                                                    "name": "Payment",
+                                                                    "children": null
+                                                                },
+                                                                {
+                                                                    "id": "781a2c9258961d30f5219c17",
+                                                                    "name": "Password",
+                                                                    "children": null
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "id": "f3ec4ccc1a5ffb5fe488fbb3",
+                                                            "name": "Support",
+                                                            "children": null
+                                                        },
+                                                        {
+                                                            "id": "444e488f1b239f8d820aba23",
+                                                            "name": "Reviews",
+                                                            "children": null
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "id": "c72f64c5a48c8b02fab6d664",
+                                                    "name": "Business Account",
+                                                    "children": [
+                                                        {
+                                                            "id": "e4ec7d88ff08d2957d8188fb",
+                                                            "name": "Customers",
+                                                            "children": [
+                                                                {
+                                                                    "id": "72558d74245fbf5993b064ea",
+                                                                    "name": "Inbox",
+                                                                    "children": null
+                                                                },
+                                                                {
+                                                                    "id": "3a04e2359bf1238cd421fd53",
+                                                                    "name": "Ratings",
+                                                                    "children": null
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "id": "a2e561c18092ccbaf83fee58",
+                                                            "name": "Items",
+                                                            "children": [
+                                                                {
+                                                                    "id": "feb8eba851264fb080d6f08b",
+                                                                    "name": "CRUD",
+                                                                    "children": [
+                                                                        {
+                                                                            "id": "8cb81e1e6350be4453204e62",
+                                                                            "name": "Bulk Import",
+                                                                            "children": null
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "id": "22dd78c2da726f091b2e3302",
+                                                            "name": "Tax",
+                                                            "children": [
+                                                                {
+                                                                    "id": "90750293ea0b9662f5740b3b",
+                                                                    "name": "Balance Sheet",
+                                                                    "children": null
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "id": "02e5993f255509f802abad2b",
+                                                            "name": "Settings",
+                                                            "children": [
+                                                                {
+                                                                    "id": "1e1b2eab46a743997e34d383",
+                                                                    "name": "Disable Account",
+                                                                    "children": null
+                                                                },
+                                                                {
+                                                                    "id": "2a325924e0f57a002e22a4c6",
+                                                                    "name": "Delete Account  (Resign and Unsubscribe)",
+                                                                    "children": null
+                                                                },
+                                                                {
+                                                                    "id": "fa334497e18aa78a476b9de7",
+                                                                    "name": "Subscription",
+                                                                    "children": null
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "id": "0d0ad3e2a615c0e840bfc3e0",
+                                                            "name": "Manage Orders",
+                                                            "children": [
+                                                                {
+                                                                    "id": "142cfe64a213f096f6ca171c",
+                                                                    "name": "Accept",
+                                                                    "children": null
+                                                                },
+                                                                {
+                                                                    "id": "920935deb6ea7c4600667058",
+                                                                    "name": "Ship",
+                                                                    "children": null
+                                                                },
+                                                                {
+                                                                    "id": "da940d2a2e37acd116b7bd4c",
+                                                                    "name": "Hold",
+                                                                    "children": null
+                                                                },
+                                                                {
+                                                                    "id": "94220432d4cfa7455acc8295",
+                                                                    "name": "Cancel",
+                                                                    "children": null
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "id": "854abd98d0cbcdbbd9acfe7c",
+                                                            "name": "Payment Setup (e.g. Stripe)",
+                                                            "children": null
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "2486885715b2018e8b7e4747",
+                                            "name": "Tax",
+                                            "children": null
+                                        },
+                                        {
+                                            "id": "04316949a18ad77e9ffb27cd",
+                                            "name": "Payment Integration (e.g. Stripe)",
+                                            "children": null
+                                        },
+                                        {
+                                            "id": "fec58468509340168fafc611",
+                                            "name": "",
+                                            "children": null
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
