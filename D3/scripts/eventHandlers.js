@@ -1,28 +1,66 @@
-export const highlightConnectedNodesAndEdges = (root, nodeId, labelToColorMap) => {
-  const nodes = d3.selectAll(".node").select("circle");
-  const links = d3.selectAll(".link");
+import { COLORS } from './constants.js';
 
-  // Reset node and edge colors
-  nodes.style("fill", d => {
-    const baseLabel = d.data.name.split(" ")[0];
+/**
+ * Highlight the selected node, its neighbors, and connected edges.
+ * @param {Object} root - The root node of the D3 hierarchy.
+ * @param {string} nodeId - The ID of the node to highlight.
+ * @param {Object} labelToColorMap - A map of labels to colors.
+ */
+export const highlightConnectedNodesAndEdges = (root, nodeId, labelToColorMap) => {
+  resetNodeAndEdgeColors(labelToColorMap);
+  highlightSelectedNode(nodeId);
+  highlightConnectedNodes(root, nodeId);
+};
+
+/**
+ * Reset the colors of all nodes and edges.
+ * @param {Object} labelToColorMap - A map of labels to colors.
+ */
+const resetNodeAndEdgeColors = (labelToColorMap) => {
+  const nodes = d3.selectAll('.node').select('circle');
+  const links = d3.selectAll('.link');
+
+  nodes.style('fill', d => {
+    const baseLabel = d.data.name.split(' ')[0];
     const subGroupLabel = `${baseLabel} SubGroup ${d.depth}`;
     return labelToColorMap[subGroupLabel];
   });
 
-  links.style("stroke", "#c0c0c0");
+  links.style('stroke', COLORS.DEFAULT_LINK_COLOR);
+};
 
-  // Highlight the selected node, its neighbors, and connected edges
-  nodes.filter(d => d.data.name === nodeId)
-    .style("fill", "#ff5722");
+/**
+ * Highlight the selected node.
+ * @param {string} nodeId - The ID of the node to highlight.
+ */
+const highlightSelectedNode = (nodeId) => {
+  d3.selectAll('.node')
+    .select('circle')
+    .filter(d => d.data.name === nodeId)
+    .style('fill', COLORS.HIGHLIGHT_COLOR);
+};
 
-  // Find connected nodes and edges
+/**
+ * Highlight the nodes connected to the selected node.
+ * @param {Object} root - The root node of the D3 hierarchy.
+ * @param {string} nodeId - The ID of the node to highlight.
+ */
+const highlightConnectedNodes = (root, nodeId) => {
   const connectedNodes = getConnectedNodes(root, nodeId);
   connectedNodes.forEach(id => {
-    nodes.filter(d => d.data.name === id)
-      .style("fill", "#ffccbc");
+    d3.selectAll('.node')
+      .select('circle')
+      .filter(d => d.data.name === id)
+      .style('fill', COLORS.CONNECTED_COLOR);
   });
 };
 
+/**
+ * Get the nodes connected to the selected node.
+ * @param {Object} root - The root node of the D3 hierarchy.
+ * @param {string} nodeId - The ID of the node to find connections for.
+ * @returns {string[]} An array of connected node IDs.
+ */
 const getConnectedNodes = (root, nodeId) => {
   const nodes = [];
   root.each(d => {

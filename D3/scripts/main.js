@@ -4,33 +4,24 @@ import { initializeKeyboardShortcuts } from './keyboardInput.js';
 import { getBaseColor, getColorShades } from './colorUtils.js';
 import { ELEMENT_IDS, FILE_PATHS, EVENTS, COLORS } from './constants.js';
 
-document.addEventListener(EVENTS.DOM_CONTENT_LOADED, () => {
+document.addEventListener(EVENTS.DOM_CONTENT_LOADED, initializeApp);
+
+function initializeApp() {
   const layoutSelector = document.getElementById(ELEMENT_IDS.LAYOUT_SELECTOR);
 
-  // Initialize Materialize form select
-  M.FormSelect.init(layoutSelector);
+  initializeLayoutSelector(layoutSelector);
+  loadAndRenderGraph(layoutSelector.value);
+  initializeKeyboardShortcuts();
+  initializeWindowResizeHandler(layoutSelector);
+}
 
-  // Load and render graph on layout change
+function initializeLayoutSelector(layoutSelector) {
+  M.FormSelect.init(layoutSelector);
   layoutSelector.addEventListener(EVENTS.CHANGE, () => {
     loadAndRenderGraph(layoutSelector.value);
   });
+}
 
-  // Initial graph load
-  loadAndRenderGraph(layoutSelector.value);
-
-  // Initialize keyboard shortcuts
-  initializeKeyboardShortcuts();
-
-  // Reload graph on window resize
-  window.addEventListener(EVENTS.RESIZE, () => {
-    loadAndRenderGraph(layoutSelector.value);
-  });
-});
-
-/**
- * Load and render the graph with the specified layout type
- * @param {string} layoutType - The type of layout to use for the graph
- */
 function loadAndRenderGraph(layoutType) {
   loadGraphData(FILE_PATHS.GRAPH_DATA)
     .then(data => {
@@ -39,31 +30,22 @@ function loadAndRenderGraph(layoutType) {
       const labelBaseColors = assignBaseColors(uniqueLabels);
       const labelToColorMap = assignColorShades(uniqueLabels, labelBaseColors);
 
-      // Clear previous SVG
-      d3.select(`#${ELEMENT_IDS.NETWORK_CONTAINER}`).html('');
-
-      // Set up the network graph
+      clearPreviousGraph();
       setupNetwork(root, labelToColorMap, uniqueLabels, labelBaseColors, layoutType);
     })
     .catch(error => console.error("Error loading data:", error));
 }
 
-/**
- * Extract unique labels from the root hierarchy
- * @param {Object} root - The root hierarchy data
- * @returns {Set} uniqueLabels - The set of unique labels
- */
+function clearPreviousGraph() {
+  d3.select(`#${ELEMENT_IDS.NETWORK_CONTAINER}`).html('');
+}
+
 function extractUniqueLabels(root) {
   const uniqueLabels = new Set();
   root.each(d => uniqueLabels.add(d.data.name.split(" ")[0]));
   return uniqueLabels;
 }
 
-/**
- * Assign base colors to each unique label
- * @param {Set} uniqueLabels - The set of unique labels
- * @returns {Object} labelBaseColors - An object mapping labels to base colors
- */
 function assignBaseColors(uniqueLabels) {
   const labelBaseColors = {};
   uniqueLabels.forEach(label => {
@@ -72,12 +54,6 @@ function assignBaseColors(uniqueLabels) {
   return labelBaseColors;
 }
 
-/**
- * Assign color shades to each unique label
- * @param {Set} uniqueLabels - The set of unique labels
- * @param {Object} labelBaseColors - An object mapping labels to base colors
- * @returns {Object} labelToColorMap - An object mapping labels to color shades
- */
 function assignColorShades(uniqueLabels, labelBaseColors) {
   const labelToColorMap = {};
   uniqueLabels.forEach(label => {
@@ -88,4 +64,10 @@ function assignColorShades(uniqueLabels, labelBaseColors) {
     }
   });
   return labelToColorMap;
+}
+
+function initializeWindowResizeHandler(layoutSelector) {
+  window.addEventListener(EVENTS.RESIZE, () => {
+    loadAndRenderGraph(layoutSelector.value);
+  });
 }

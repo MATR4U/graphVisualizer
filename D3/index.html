@@ -56,7 +56,7 @@
       <div id="visualization" class="section scrollspy">
         <div class="card-panel">
           <h5>Data Visualization</h5>
-          <div id="mynetwork"></div>
+          <div id="mynetwork" style="width: 100%; height: 600px;"></div>
         </div>
       </div>
 
@@ -69,25 +69,7 @@
               <option value="radial">Radial Layout</option>
               <option value="force">Force-Directed Layout</option>
             </select>
-            <label for="layoutSelector">Select Layout</label>
           </div>
-          <h3>Force Layout Settings</h3>
-          <label for="chargeStrength">Charge Strength:</label>
-          <input type="range" id="chargeStrength" name="chargeStrength" min="-1000" max="0" step="10" value="-300">
-          <span id="chargeValue">-300</span>
-
-          <label for="linkDistance">Link Distance:</label>
-          <input type="range" id="linkDistance" name="linkDistance" min="0" max="300" step="10" value="100">
-          <span id="linkValue">100</span>
-
-          <label for="collisionRadius">Collision Radius:</label>
-          <input type="range" id="collisionRadius" name="collisionRadius" min="0" max="100" step="5" value="10">
-          <span id="collisionValue">10</span>
-
-          <h5>Keyboard Shortcuts</h5>
-          <ul>
-            <!-- List of shortcuts here -->
-          </ul>
         </div>
       </div>
     </div>
@@ -96,12 +78,13 @@
   <script src="https://d3js.org/d3.v6.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.2/tinycolor.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script type="module" src="scripts/colorUtils.js"></script>
-  <script type="module" src="scripts/networkSetup.js"></script>
-  <script type="module" src="scripts/eventHandlers.js"></script>
-  <script type="module" src="scripts/keyboardInput.js"></script>
-  <script type="module" src="scripts/dataLoader.js"></script>
-  <script type="module" src="scripts/main.js"></script>
+  <script type="module" src="./scripts/constants.js"></script>
+  <script type="module" src="./scripts/colorUtils.js"></script>
+  <script type="module" src="./scripts/networkSetup.js"></script>
+  <script type="module" src="./scripts/eventHandlers.js"></script>
+  <script type="module" src="./scripts/keyboardInput.js"></script>
+  <script type="module" src="./scripts/dataLoader.js"></script>
+  <script type="module" src="./scripts/main.js"></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {

@@ -1,4 +1,10 @@
 Project Recap: D3.js Hierarchical Data Visualization
+
+
+# Start http server:
+python -m http.server 8000 -d .
+
+
 Objective:
 The project aims to create an interactive and visually appealing hierarchical data visualization using D3.js. The visualization displays a network of nodes and links with various interactive features such as color cycling, node highlighting, and keyboard shortcuts.
 
