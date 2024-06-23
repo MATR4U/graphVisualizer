@@ -1,6 +1,5 @@
 import { TreeLayout } from './networkLayoutTree.js';
-import { RadialLayout } from './networkLayoutRadial.js';
-import { ForceLayout } from './networkLayoutForce.js';
+
 import { ELEMENT_IDS, EVENTS } from './constants.js';
 
 /**

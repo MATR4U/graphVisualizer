@@ -1,112 +1,222 @@
+
+
 /* General Styles */
+
 body {
+
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
   background-color: #f0f2f5;
+
   margin: 0;
+
   padding: 0;
+
 }
+
+
 
 .container {
+
   margin: 20px auto;
+
   max-width: 1200px;
+
 }
+
+
 
 /* Network Visualization Container */
+
 #mynetwork {
+
   width: 100%;
+
   height: 100vh; /* Full viewport height */
+
   overflow: hidden;
+
   position: relative;
+
 }
+
+
 
 /* SVG Styles */
+
 svg {
+
   width: 100%;
+
   height: 100%;
+
 }
+
+
 
 /* Node Styles */
+
 .node circle {
-  fill: #999;
-  stroke: steelblue;
-  stroke-width: 3px;
+
+  fill: #4CAF50; /* Changed to green for better visibility */
+
+  stroke: #388E3C; /* Darker green stroke */
+
+  stroke-width: 2px;
+
 }
+
+
 
 .node text {
+
   font: 12px sans-serif;
+
   pointer-events: none; /* Prevent text from capturing mouse events */
+
 }
+
+
 
 /* Link Styles */
+
 .link {
+
   fill: none;
-  stroke: #555;
+
+  stroke: #9E9E9E; /* Changed to grey for better visibility */
+
   stroke-width: 1.5px;
+
 }
+
+
 
 /* Sidebar Styles */
+
 .sidenav {
+
   background-color: #fff;
+
   border-right: 1px solid #ddd;
+
 }
+
+
 
 .sidenav .user-view {
+
   background-color: #2196f3; /* Materialize blue */
+
 }
+
+
 
 .sidenav .user-view .background {
+
   background-color: #2196f3; /* Materialize blue */
+
 }
+
+
 
 .sidenav .user-view a {
+
   color: #fff;
+
 }
+
+
 
 .sidenav .user-view .name,
+
 .sidenav .user-view .email {
+
   color: #fff;
+
 }
+
+
 
 /* Card Panel Styles */
+
 .card-panel {
+
   padding: 20px;
+
   border-radius: 8px;
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
 }
+
+
 
 /* Input Field Styles */
+
 .input-field select {
+
   display: block;
+
 }
+
+
 
 .input-field label {
+
   font-size: 1rem;
+
   color: #9e9e9e;
+
 }
+
+
 
 /* Range Input Styles */
+
 input[type="range"] {
+
   width: 100%;
+
 }
+
+
 
 input[type="range"] + span {
+
   display: inline-block;
+
   margin-top: 10px;
+
   font-size: 1rem;
+
   color: #666;
+
 }
 
+
+
 /* Responsive Adjustments */
+
 @media (max-width: 768px) {
+
   .sidenav {
+
     display: none;
+
   }
 
   .sidenav-trigger {
+
     display: block;
+
   }
 
-  .container {
-    padding: 0 10px;
+  .col.s12.m8.l9 {
+
+    width: 100%;
+
   }
+
 }
+
